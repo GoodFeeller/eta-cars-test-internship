@@ -7,14 +7,14 @@ function useCoinInfo(id: string | undefined) {
   const [notFound, setNotFound] = useState<boolean>(false)
   useEffect(() => {
     const getCoin = async () => {
-      if (id != null) {
-        try {
-          const response = await CoinInfoService.getCoin(id)
-          setCoinInfo(response)
-        } catch (err) {
-          setNotFound(true)
-        }
-      }
+      // if (id != null) {
+      //   try {
+      //     const response = await CoinInfoService.getCoin(id)
+      //     setCoinInfo(response)
+      //   } catch (err) {
+      //     setNotFound(true)
+      //   }
+      // }
     }
     getCoin()
   }, [])
