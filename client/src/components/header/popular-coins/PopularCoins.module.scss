@@ -1,0 +1,64 @@
+.popularCoinsBody {
+  display: flex;
+  justify-content: space-between;
+  &>div:nth-child(2) {
+    border-right: 0.01vw black solid;
+    border-left: 0.01vw black solid;
+  }
+}
+
+.coinItem {
+  padding: 0 1vw;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: 'img symbol' 'price price';
+  align-items: center;
+  font-weight: 600;
+  img {
+    width: 20px;
+    height: 20px;
+    user-select: none;
+    grid-area: img;
+  }
+  span {
+    font-size: 18px;
+    &:nth-child(2) {
+      grid-area: symbol;
+    }
+    &:last-child {
+      grid-area: price;
+    }
+  }
+}
+ 
+@media (max-width: 800px) {
+  .coinItem {
+    img {
+      width: 20px;
+      height: 20px;
+    }
+    span {
+      font-size: 20px;
+      &:not(&:last-child) {
+        margin-right: 5vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 510px) {
+  .coinItem {
+    img {
+      width: 3.92vw;
+      height: 3.92vw;
+    }
+    span {
+      font-size: 3.92vw;
+      &:not(&:last-child) {
+        margin-right: 5vw;
+      }
+    }
+  }
+}
