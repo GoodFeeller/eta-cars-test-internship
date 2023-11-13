@@ -11,14 +11,14 @@ function useProfile() {
   useEffect(() => {
     setNowPrice(0)
     const getInfo = async (id: string) => {
-      const coinStr = localStorage.getItem(id)
-      if (coinStr != null) {
-        const response = await CoinInfoService.getCoin(id)
-        const coin: IProfileCoin = JSON.parse(coinStr)
-        setNowPrice(
-          (prevState) => prevState + Number(response.priceUsd) * coin.count,
-        )
-      }
+      // const coinStr = localStorage.getItem(id)
+      // if (coinStr != null) {
+      //   const response = await CoinInfoService.getCoin(id)
+      //   const coin: IProfileCoin = JSON.parse(coinStr)
+      //   setNowPrice(
+      //     (prevState) => prevState + Number(response.priceUsd) * coin.count,
+      //   )
+      // }
     }
     profile.id.forEach((id) => getInfo(id))
   }, [profile])
