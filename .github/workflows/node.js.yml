@@ -28,6 +28,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: cd ./client/
+    - run: cd ./packages/client/
     - run: npm install
     - run: npm test
